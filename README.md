@@ -21,4 +21,4 @@ To solve this:
 - Increase in-amp gain
 
 ## Scheme
-<img src="https://github.com/JustinJKwok/4PP-source-measurement-unit/blob/master/current_source_scheme.png">
+<img src="https://github.com/JustinJKwok/4PP-source-measurement-unit/blob/master/smu_scheme.PNG">
