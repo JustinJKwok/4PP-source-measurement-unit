@@ -7,7 +7,16 @@ Inspired by https://doi.org/10.3390/ma10020110 but uses different design and cod
 This current source uses an enhanced Howland current source with buffered non-inverting feedback. Several series resistors are selectable using relays to expand the range of current from 10 nA to ~10 mA. Current is sourced through the outer 2 probes while voltage is measured across the inner 2 probes using an instrumentation amplifier. Relays are connected to the 2 outer probes to allow reversing of the current direction. DAC output feeds into the Howland current source and an ADC is used to measure the voltage from the in-amp. An optional 16-bit ADC is used although the Arduino internal ADC is fine.
 
 ## Usage
-Arduino sketch coming soon
+Send commands via serial to start sheet resistance measurement or to switch current direction. Commands are sent with the header ">" and footer "\n".
+
+Commands:
+- meas - start measurement algorithm starting at 10 na and increasing until an acceptable voltage is measured
+- forw - source current across 4 point probe from left to right
+- rev - source curent across 4 point probe from right to left
+
+more details soon
+
+### Troubleshooting
 
 To ensure voltage compliance a python script is included to determine whether an acceptable voltage can be reached across the 2 inner probes. Two cases to watch out for:
 - when the total resistance of the sample+contacts is so large that an acceptable voltage cannot be reached
